@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-
 import matplotlib.pyplot as plt
 
 #importing the dataset from the url
@@ -30,3 +29,45 @@ print("Mean Values: \n", toronto_mean_values, "\n\n", "Min Values: \n", toronto_
 # Brief descriptive statistics for Toronto data
 print("Descriptive Statistics for Toronto Data:")
 print(toronto_numeric_data.describe())
+
+
+# Univariate analysis for Toronto data
+
+# Histogram for each numeric column
+toronto_numeric_data.hist(bins=15, figsize=(15, 10))
+plt.suptitle('Histograms of Numeric Columns for Toronto Data')
+plt.show()
+
+# Boxplot for each numeric column
+toronto_numeric_data.plot(kind='box', subplots=True, layout=(3, 3), figsize=(15, 10), title='Boxplots of Numeric Columns for Toronto Data')
+plt.suptitle('Boxplots of Numeric Columns for Toronto Data')
+plt.show()
+
+# Density plot for each numeric column
+toronto_numeric_data.plot(kind='density', subplots=True, layout=(3, 3), figsize=(15, 10), title='Density Plots of Numeric Columns for Toronto Data')
+plt.suptitle('Density Plots of Numeric Columns for Toronto Data')
+plt.show()
+
+
+# Bivariate analysis for Toronto data
+# Scatter plots for Pump Price vs each numeric column
+for column in toronto_numeric_data.columns:
+    if column != "Pump Price":
+        plt.figure(figsize=(8, 6))
+        plt.scatter(toronto_numeric_data[column], toronto_numeric_data["Pump Price"])
+        plt.title(f'Pump Price vs {column}')
+        plt.xlabel(column)
+        plt.ylabel('Pump Price')
+        plt.show()
+
+# Correlation matrix
+correlation_matrix = toronto_numeric_data.corr()
+print("Correlation Matrix:\n", correlation_matrix)
+
+# Heatmap of the correlation matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+plt.title('Heatmap of Correlation Matrix for Toronto Data')
+plt.show()
+
+import seaborn as sns
