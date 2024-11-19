@@ -1,8 +1,13 @@
 # Predictive Machine Learning Algorithms for Analyzing Fuel Price Trends in Toronto
 
-This project focuses on analyzing and predicting pump fuel prices in Toronto using machine learning algorithms. The primary goal is to utilize historical fuel price data from Ontario and apply different machine learning models to understand which variables most influence fuel price fluctuations and determine the best model for predicting future fuel prices accurately.
 
-The dataset used in this project is publicly available from the Ontario government:
+This project, Predictive Machine Learning Algorithms for Analyzing Fuel Price Trends in Toronto, focuses on leveraging historical data to predict pump fuel prices in Toronto. The objective is to compare the performance of multiple machine learning models, including Linear Regression, Random Forest Regression, and KNN Regression, to determine the most accurate model for fuel price prediction. The project also aims to identify the key factors influencing fuel price trends.
 
-Dataset Source: Ontario Fuel Prices
-Description: This dataset contains detailed records of fuel prices across various regions in Ontario, including data on pump prices, crude costs, taxes, wholesale margins, and retail margins. Our analysis focuses on fuel prices in Toronto, utilizing the historical trends and economic factors available within this dataset.
+Using real-world data from the Ontario Fuel Prices dataset, the analysis involves:
+
+1. Cleaning and preprocessing the data to focus solely on Toronto.
+2. Conducting exploratory data analysis (EDA) to uncover patterns and relationships in the data.
+3. Training and evaluating machine learning models using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score.
+4. Visualizing actual vs. predicted prices to assess model accuracy and trends.
+   
+The insights from this project provide a comprehensive understanding of fuel price dynamics and help determine the most effective predictive model for future price forecasting.
